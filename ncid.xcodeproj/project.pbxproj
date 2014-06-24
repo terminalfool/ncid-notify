@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84C755161959F97000346EA7 /* ncid_network.c in Sources */ = {isa = PBXBuildFile; fileRef = 84C755151959F97000346EA7 /* ncid_network.c */; };
 		E11DDDEE121C953600ECE559 /* NSMenu+NCIDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E11DDDED121C953600ECE559 /* NSMenu+NCIDExtensions.m */; };
 		E136179F0E3F1CDF0006CFE7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E136179E0E3F1CDF0006CFE7 /* SystemConfiguration.framework */; };
 		E197C6FA0FB802FC00695F58 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E197C6F90FB802FC00695F58 /* AddressBook.framework */; };
@@ -16,7 +17,6 @@
 		E1C5DBC80E252CA800057276 /* Settings.nib in Resources */ = {isa = PBXBuildFile; fileRef = 17C83422046599B000A82A15 /* Settings.nib */; };
 		E1C5DBCA0E252CA800057276 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		E1C5DBCB0E252CA800057276 /* NCID.m in Sources */ = {isa = PBXBuildFile; fileRef = 17850EEB03E5F41900A82A15 /* NCID.m */; };
-		E1C5DBCC0E252CA800057276 /* ncid_network.c in Sources */ = {isa = PBXBuildFile; fileRef = 179C2F5803E6293900A82A15 /* ncid_network.c */; };
 		E1C5DBCE0E252CA800057276 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		E1C5DBCF0E252CA800057276 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172DC27C046EDE8200A82A15 /* Carbon.framework */; };
 		E1EF7D1B0E3EB77A00EF00CE /* NCIDCaller.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EF7D190E3EB77A00EF00CE /* NCIDCaller.m */; };
@@ -42,14 +42,14 @@
 		17396F2E03E6E1A500A82A15 /* NCIDpop.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = NCIDpop.icns; sourceTree = "<group>"; };
 		17850EEA03E5F41900A82A15 /* NCID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCID.h; sourceTree = "<group>"; tabWidth = 8; usesTabs = 0; };
 		17850EEB03E5F41900A82A15 /* NCID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCID.m; sourceTree = "<group>"; tabWidth = 8; usesTabs = 0; };
-		179C2F5703E6293900A82A15 /* ncid_network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ncid_network.h; path = ../ncid_network.h; sourceTree = "<group>"; tabWidth = 8; };
-		179C2F5803E6293900A82A15 /* ncid_network.c */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.c; name = ncid_network.c; path = ../ncid_network.c; sourceTree = "<group>"; tabWidth = 8; };
 		17C83423046599B000A82A15 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/Settings.nib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* NCID_Prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCID_Prefix.h; sourceTree = "<group>"; };
+		84C755151959F97000346EA7 /* ncid_network.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ncid_network.c; sourceTree = "<group>"; };
+		84C755171959F97D00346EA7 /* ncid_network.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ncid_network.h; sourceTree = "<group>"; };
 		E11DDDEC121C953600ECE559 /* NSMenu+NCIDExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMenu+NCIDExtensions.h"; sourceTree = "<group>"; tabWidth = 8; usesTabs = 0; };
 		E11DDDED121C953600ECE559 /* NSMenu+NCIDExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMenu+NCIDExtensions.m"; sourceTree = "<group>"; tabWidth = 8; usesTabs = 0; };
 		E136179E0E3F1CDF0006CFE7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
@@ -132,10 +132,10 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				84C755171959F97D00346EA7 /* ncid_network.h */,
+				84C755151959F97000346EA7 /* ncid_network.c */,
 				32CA4F630368D1EE00C91783 /* NCID_Prefix.h */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
-				179C2F5703E6293900A82A15 /* ncid_network.h */,
-				179C2F5803E6293900A82A15 /* ncid_network.c */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -228,9 +228,9 @@
 			files = (
 				E1C5DBCA0E252CA800057276 /* main.m in Sources */,
 				E1C5DBCB0E252CA800057276 /* NCID.m in Sources */,
-				E1C5DBCC0E252CA800057276 /* ncid_network.c in Sources */,
 				E1EF7D1B0E3EB77A00EF00CE /* NCIDCaller.m in Sources */,
 				E11DDDEE121C953600ECE559 /* NSMenu+NCIDExtensions.m in Sources */,
+				84C755161959F97000346EA7 /* ncid_network.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
