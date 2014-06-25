@@ -388,7 +388,7 @@ NSString *runCommand(NSString *commandToRun) {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *currentHost = [defaults stringForKey:@"NCIDServer"];
 
-    [NSBundle loadNibNamed:@"Settings" owner:self];
+//    [NSBundle loadNibNamed:@"Settings" owner:self];
 
     [_settingsHost setStringValue:currentHost ? currentHost : @"localhost"];
 //    [_settingsUseGrowl setEnabled:[GrowlApplicationBridge isGrowlRunning]];
