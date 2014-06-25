@@ -21,6 +21,10 @@
 - (BOOL)_isCommandKeyDown;
 @end
 
+@interface NSUserNotification (CFIPrivate)
+- (void)set_identityImage:(NSImage *)image;
+@end
+
 static const int HISTORY_SIZE = 100;
 
 static BOOL isReachable = NO;
@@ -202,53 +206,14 @@ fail:
     [_callHistoryController rearrangeObjects];
 }
 
-
-
-
-NSString *runCommand(NSString *commandToRun) {
-    NSTask *task;
-    task = [[NSTask alloc] init];
-    [task setLaunchPath: @"/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier"];
-    
-    NSArray *arguments = [NSArray arrayWithObjects:
-                          @"-title \"Incoming Call\" -sender \"[[caller person] imageData]\" -message \"[caller name] [caller number]\"" ,
-                          [NSString stringWithFormat:@"%@", commandToRun],
-                          nil];
-    NSLog(@"run command: %@",commandToRun);
-    [task setArguments: arguments];
-    
-    NSPipe *pipe;
-    pipe = [NSPipe pipe];
-    [task setStandardOutput: pipe];
-    
-    NSFileHandle *file;
-    file = [pipe fileHandleForReading];
-    
-    [task launch];
-    
-    NSData *data;
-    data = [file readDataToEndOfFile];
-    
-    NSString *output;
-    output = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
-    return output;
-}
-
-
-
-
 - (void)showCaller:(NCIDCaller *)caller {
     [self addCallerToHistory:caller];
-    
-    
-
-    
-    
-    NSString *output = runCommand(@"/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -title \"Incoming Call\" -sender \"[[caller person] imageData]\" -message \"[caller name] [caller number]\"");
-    
-    
-    
-    
+ 
+    NSUserNotification *notification = [[NSUserNotification alloc] init];
+        notification.title = @"[caller name]";
+        notification.subtitle = @"[caller number]";
+        [notification set_identityImage:[NSImage imageNamed:@"[[caller person] imageData]"]];
+        [NSUserNotificationCenter.defaultUserNotificationCenter deliverNotification:notification];
     
     [_popupName setStringValue:[caller name]];
     [_popupNumber setStringValue:[caller number]];
