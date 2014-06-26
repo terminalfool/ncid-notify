@@ -210,17 +210,17 @@ fail:
     [self addCallerToHistory:caller];
  
     NSUserNotification *notification = [[NSUserNotification alloc] init];
-        notification.title = @"[caller name]";
-        notification.subtitle = @"[caller number]";
+        notification.title = [caller name];
+        notification.subtitle = [caller number];
         [notification set_identityImage:[NSImage imageNamed:@"[[caller person] imageData]"]];
         [NSUserNotificationCenter.defaultUserNotificationCenter deliverNotification:notification];
     
-    [_popupName setStringValue:[caller name]];
-    [_popupNumber setStringValue:[caller number]];
-    [_popupDateTime setObjectValue:[caller date]];
-    [_popupImage setImage:[NSImage imageNamed:@"NSApplicationIcon"]];
-    imageLoadingTag = [[caller person] beginLoadingImageDataForClient:self];
-    [_popupWindow makeKeyAndOrderFront:self];
+//    [_popupName setStringValue:[caller name]];
+//    [_popupNumber setStringValue:[caller number]];
+//    [_popupDateTime setObjectValue:[caller date]];
+//    [_popupImage setImage:[NSImage imageNamed:@"NSApplicationIcon"]];
+//    imageLoadingTag = [[caller person] beginLoadingImageDataForClient:self];
+//    [_popupWindow makeKeyAndOrderFront:self];
     
     [_currentTimer invalidate];
     [_currentTimer release];
