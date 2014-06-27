@@ -4,6 +4,7 @@
 //
 //  Created by Alexei Kosut on Mon Jan 27 2003.
 //  Copyright (c) 2003 __MyCompanyName__. All rights reserved.`
+//  Copyright (c) 2014 David Watson. All rights reserved.
 //
 
 #import "NCID.h"
@@ -32,11 +33,11 @@ static SCNetworkReachabilityRef networkReachability;
 
 @implementation NCID
 
-- (float)cellHeight {
-    return [_callHistoryTableView rowHeight] + [_callHistoryTableView intercellSpacing].height;
-}
+//- (float)cellHeight {
+//    return [_callHistoryTableView rowHeight] + [_callHistoryTableView intercellSpacing].height;
+//}
 
-- (void)awakeFromNib {
+/*- (void)awakeFromNib {
     _popupWindow = [[NSWindow alloc] initWithContentRect:[_contentView frame] styleMask:NSBorderlessWindowMask backing:NSBackingStoreBuffered defer:YES screen:[NSScreen mainScreen]];
 
     [_popupWindow setContentView:_contentView];
@@ -55,7 +56,7 @@ static SCNetworkReachabilityRef networkReachability;
     
     [_callHistoryWindow setResizeIncrements: NSMakeSize(1, [self cellHeight])];
 }
-
+*/
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     _callHistory = [[NSMutableArray alloc] init];
@@ -68,9 +69,9 @@ static SCNetworkReachabilityRef networkReachability;
 
     [self _startThread];
     
-    if ([defaults boolForKey:@"NCIDShowHistoryAtLaunch"]) {
-	[_callHistoryWindow makeKeyAndOrderFront:self];
-    }
+//    if ([defaults boolForKey:@"NCIDShowHistoryAtLaunch"]) {
+//	[_callHistoryWindow makeKeyAndOrderFront:self];
+//    }
 }
 
 - (BOOL)applicationShouldHandleReopen:(NSApplication *)application hasVisibleWindows:(BOOL)flag {
@@ -78,10 +79,11 @@ static SCNetworkReachabilityRef networkReachability;
 	[self _stopThread];
 	[self _editSettings];
 	[self _startThread];
-    } else {
-	[_callHistoryWindow makeKeyAndOrderFront:self];
     }
-        
+//    } else {
+//	[_callHistoryWindow makeKeyAndOrderFront:self];
+//    }
+
     return NO;
 }
 
@@ -215,12 +217,13 @@ fail:
         [notification set_identityImage:[NSImage imageNamed:@"[[caller person] imageData]"]];
         [NSUserNotificationCenter.defaultUserNotificationCenter deliverNotification:notification];
     
-//    [_popupName setStringValue:[caller name]];
-//    [_popupNumber setStringValue:[caller number]];
-//    [_popupDateTime setObjectValue:[caller date]];
-//    [_popupImage setImage:[NSImage imageNamed:@"NSApplicationIcon"]];
-//    imageLoadingTag = [[caller person] beginLoadingImageDataForClient:self];
-//    [_popupWindow makeKeyAndOrderFront:self];
+/*
+    [_popupName setStringValue:[caller name]];
+    [_popupNumber setStringValue:[caller number]];
+    [_popupDateTime setObjectValue:[caller date]];
+    [_popupImage setImage:[NSImage imageNamed:@"NSApplicationIcon"]];
+    imageLoadingTag = [[caller person] beginLoadingImageDataForClient:self];
+    [_popupWindow makeKeyAndOrderFront:self];
     
     [_currentTimer invalidate];
     [_currentTimer release];
@@ -229,6 +232,7 @@ fail:
 	timeInterval = 20;
     _currentTimer = [[NSTimer scheduledTimerWithTimeInterval:timeInterval target:self selector:@selector(hideCaller:)
 						    userInfo:nil repeats:NO] retain];
+*/
 }
 
 - (void)showMessage:(NSString *)message {
@@ -241,9 +245,10 @@ fail:
     if (data == nil)
 	return;
     
-    [_popupImage setImage:[[[NSImage alloc] initWithData:data] autorelease]];
+//    [_popupImage setImage:[[[NSImage alloc] initWithData:data] autorelease]];
 }
 
+/*
 - (void)hideCaller:(id)sender {
     [_popupWindow orderOut:nil];
     [ABPerson cancelLoadingImageDataForTag:imageLoadingTag];
@@ -259,6 +264,7 @@ fail:
     [_currentTimer release];
     [super dealloc];
 }
+*/
 
 - (IBAction)settingsOK:(id)sender {
     // see http://www.red-sweater.com/blog/229/stay-responsive
@@ -272,7 +278,8 @@ fail:
     [NSApp stopModalWithCode:NSCancelButton];
 }
 
-- (NCIDCaller *)_clickedCaller;
+/*
+ - (NCIDCaller *)_clickedCaller;
 {
     int clickedRow = [_callHistoryTableView clickedRow];
     if (clickedRow == -1)
@@ -280,6 +287,7 @@ fail:
     
     return [[_callHistoryController arrangedObjects] objectAtIndex:clickedRow];
 }
+
 
 - (IBAction)reverseLookupCaller:(id)sender;
 {
@@ -290,7 +298,9 @@ fail:
 {
     [[NSWorkspace sharedWorkspace] openURL:[[self _clickedCaller] addressBookURL]];
 }
+*/
 
+/*
 - (void)menuNeedsUpdate:(NSMenu *)menu;
 {
     NCIDCaller *clickedCaller = [self _clickedCaller];
@@ -348,6 +358,7 @@ fail:
 
     [self tableView:_callHistoryTableView writeRowsWithIndexes:rowIndexes toPasteboard:[NSPasteboard generalPasteboard]];
 }
+*/
 
 - (void)_editSettings {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -394,6 +405,7 @@ fail:
 	   (GetCurrentKeyModifiers() & cmdKey);
 }
 
+/*
 - (NSRect)windowWillUseStandardFrame:(NSWindow *)window defaultFrame:(NSRect)defaultFrame;
 {
     NSRect frame = [window frame];
@@ -420,5 +432,6 @@ fail:
     
     return frame;
 }
+*/
 
 @end

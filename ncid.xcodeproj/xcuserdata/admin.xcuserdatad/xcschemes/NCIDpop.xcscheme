@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E1C5DBBF0E252CA800057276"
-               BuildableName = "NCIDpop.app"
-               BlueprintName = "NCIDpop"
+               BuildableName = "NCIDnotify.app"
+               BlueprintName = "NCIDnotify"
                ReferencedContainer = "container:ncid.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E1C5DBBF0E252CA800057276"
-            BuildableName = "NCIDpop.app"
-            BlueprintName = "NCIDpop"
+            BuildableName = "NCIDnotify.app"
+            BlueprintName = "NCIDnotify"
             ReferencedContainer = "container:ncid.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -52,8 +52,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E1C5DBBF0E252CA800057276"
-            BuildableName = "NCIDpop.app"
-            BlueprintName = "NCIDpop"
+            BuildableName = "NCIDnotify.app"
+            BlueprintName = "NCIDnotify"
             ReferencedContainer = "container:ncid.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -70,8 +70,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E1C5DBBF0E252CA800057276"
-            BuildableName = "NCIDpop.app"
-            BlueprintName = "NCIDpop"
+            BuildableName = "NCIDnotify.app"
+            BlueprintName = "NCIDnotify"
             ReferencedContainer = "container:ncid.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

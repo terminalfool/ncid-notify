@@ -1,5 +1,5 @@
 /* Localized versions of Info.plist keys */
 
-CFBundleName = "NCIDpop";
-CFBundleShortVersionString = "0.9.17";
-CFBundleGetInfoString = "0.9.17, © 2003 Alexei Kosut. Portions © 2008–2010 Nicholas Riley.";
+CFBundleName = "NCIDnotify";
+CFBundleShortVersionString = "0.9.17a";
+CFBundleGetInfoString = "0.9.17a, © 2003 Alexei Kosut. Portions © 2008–2010 Nicholas Riley; © 2014 David Watson.";

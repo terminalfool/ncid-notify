@@ -1,7 +1,7 @@
 #!/bin/zsh -e
 
 PACKAGEDIR="$PWD"
-PRODUCT="NCIDpop"
+PRODUCT="NCIDnotify"
 
 # gather information
 VERSION=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleVersion' Info.plist)
@@ -12,7 +12,7 @@ DSTROOT="$PACKAGEDIR/$VOL"
 sudo rm -rf "$DSTROOT"
 find . -name \*~ -exec rm '{}' \;
 rm -rf build/
-xcodebuild -target NCIDpop -configuration Deployment DSTROOT="$DSTROOT" \
+xcodebuild -target NCIDnotify -configuration Deployment DSTROOT="$DSTROOT" \
     INSTALL_PATH=/ DEPLOYMENT_LOCATION=YES install
 
 # create disk image

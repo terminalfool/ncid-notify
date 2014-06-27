@@ -5,25 +5,25 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>NCIDpop</string>
+	<string>NCIDnotify</string>
 	<key>CFBundleGetInfoString</key>
-	<string>NCIDpop 0.9.17</string>
+	<string>NCIDnotify 0.9.17a</string>
 	<key>CFBundleIconFile</key>
-	<string>NCIDpop</string>
+	<string>NCIDnotify</string>
 	<key>CFBundleIdentifier</key>
-	<string>edu.stanford.akosut.NCIDpop</string>
+	<string>us.adnauseam.NCIDnotify</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>NCIDpop</string>
+	<string>NCIDnotify</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.9.17</string>
+	<string>0.9.17a</string>
 	<key>CFBundleSignature</key>
-	<string>Npop</string>
+	<string>Dust</string>
 	<key>CFBundleVersion</key>
-	<string>0.9.17</string>
+	<string>0.9.17a</string>
 	<key>LSUIElement</key>
 	<string>1</string>
 	<key>NSMainNibFile</key>

@@ -2,6 +2,7 @@ Copyright (c) 2003 Alexei Kosut
 Portions Copyright (c) 2004-2006 Lyman Epp
 Portions Copyright (c) 2005-2006 Mark Salyzyn
 Portions Copyright (c) 2009-2010 Chris Lenderman
+Portions Copyright (c) 2014 David Watson
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
