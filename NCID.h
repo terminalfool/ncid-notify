@@ -4,7 +4,6 @@
 //
 //  Created by Alexei Kosut on Mon Jan 27 2003.
 //  Copyright (c) 2003 __MyCompanyName__. All rights reserved.
-//  Copyright (c) 2014 David Watson. All rights reserved.
 //
 
 #import <AppKit/AppKit.h>

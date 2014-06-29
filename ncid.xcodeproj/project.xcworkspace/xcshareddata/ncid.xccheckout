@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>685EC44D-CE38-453F-9F5C-38F85D27C514</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ncid</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1A71D7DE-B491-4278-A17C-0215921E1D38</key>
+		<string>https://github.com/terminalfool/ncid-notify.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ncid.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1A71D7DE-B491-4278-A17C-0215921E1D38</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/terminalfool/ncid-notify.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1A71D7DE-B491-4278-A17C-0215921E1D38</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1A71D7DE-B491-4278-A17C-0215921E1D38</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ncid-notify</string>
+		</dict>
+	</array>
+</dict>
+</plist>
