@@ -10,6 +10,7 @@
 #import "NCID.h"
 #import "NCIDCaller.h"
 #import "NSMenu+NCIDExtensions.h"
+//#import <Growl/Growl.h>
 #include "ncid_network.h"
 #include <Carbon/Carbon.h>
 #include <SystemConfiguration/SystemConfiguration.h>
@@ -22,10 +23,6 @@
 - (BOOL)_isCommandKeyDown;
 @end
 
-@interface NSUserNotification (CFIPrivate)
-- (void)set_identityImage:(NSImage *)image;
-@end
-
 static const int HISTORY_SIZE = 100;
 
 static BOOL isReachable = NO;
@@ -33,11 +30,11 @@ static SCNetworkReachabilityRef networkReachability;
 
 @implementation NCID
 
-//- (float)cellHeight {
-//    return [_callHistoryTableView rowHeight] + [_callHistoryTableView intercellSpacing].height;
-//}
+- (float)cellHeight {
+    return [_callHistoryTableView rowHeight] + [_callHistoryTableView intercellSpacing].height;
+}
 
-/*- (void)awakeFromNib {
+- (void)awakeFromNib {
     _popupWindow = [[NSWindow alloc] initWithContentRect:[_contentView frame] styleMask:NSBorderlessWindowMask backing:NSBackingStoreBuffered defer:YES screen:[NSScreen mainScreen]];
 
     [_popupWindow setContentView:_contentView];
@@ -56,7 +53,7 @@ static SCNetworkReachabilityRef networkReachability;
     
     [_callHistoryWindow setResizeIncrements: NSMakeSize(1, [self cellHeight])];
 }
-*/
+
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     _callHistory = [[NSMutableArray alloc] init];
@@ -69,9 +66,9 @@ static SCNetworkReachabilityRef networkReachability;
 
     [self _startThread];
     
-//    if ([defaults boolForKey:@"NCIDShowHistoryAtLaunch"]) {
-//	[_callHistoryWindow makeKeyAndOrderFront:self];
-//    }
+    if ([defaults boolForKey:@"NCIDShowHistoryAtLaunch"]) {
+	[_callHistoryWindow makeKeyAndOrderFront:self];
+    }
 }
 
 - (BOOL)applicationShouldHandleReopen:(NSApplication *)application hasVisibleWindows:(BOOL)flag {
@@ -79,11 +76,10 @@ static SCNetworkReachabilityRef networkReachability;
 	[self _stopThread];
 	[self _editSettings];
 	[self _startThread];
+    } else {
+	[_callHistoryWindow makeKeyAndOrderFront:self];
     }
-//    } else {
-//	[_callHistoryWindow makeKeyAndOrderFront:self];
-//    }
-
+        
     return NO;
 }
 
@@ -210,14 +206,26 @@ fail:
 
 - (void)showCaller:(NCIDCaller *)caller {
     [self addCallerToHistory:caller];
- 
-    NSUserNotification *notification = [[NSUserNotification alloc] init];
-        notification.title = [caller name];
-        notification.subtitle = [caller number];
-        [notification set_identityImage:[NSImage imageNamed:@"[[caller person] imageData]"]];
-        [NSUserNotificationCenter.defaultUserNotificationCenter deliverNotification:notification];
     
+    NSUserNotification *notification = [[NSUserNotification alloc] init];
+    notification.title = [caller name];
+    notification.subtitle = [caller number];
+    [notification set_identityImage:[NSImage imageNamed:@"[[caller person] imageData]"]];
+    [NSUserNotificationCenter.defaultUserNotificationCenter deliverNotification:notification];
+
 /*
+ if ([[NSUserDefaults standardUserDefaults] boolForKey:@"UseGrowl"] && [GrowlApplicationBridge isGrowlRunning]) {
+	[GrowlApplicationBridge setGrowlDelegate:@""];
+	[GrowlApplicationBridge notifyWithTitle:[caller name]
+				    description:[caller number]
+			       notificationName:@"Incoming Call"
+				       iconData:[[caller person] imageData]
+				       priority:0
+				       isSticky:NO
+				   clickContext:nil];
+	return;
+    }
+    
     [_popupName setStringValue:[caller name]];
     [_popupNumber setStringValue:[caller number]];
     [_popupDateTime setObjectValue:[caller date]];
@@ -225,6 +233,7 @@ fail:
     imageLoadingTag = [[caller person] beginLoadingImageDataForClient:self];
     [_popupWindow makeKeyAndOrderFront:self];
     
+*/
     [_currentTimer invalidate];
     [_currentTimer release];
     NSTimeInterval timeInterval = [[NSUserDefaults standardUserDefaults] floatForKey:@"MessageDisplayTime"];
@@ -232,7 +241,6 @@ fail:
 	timeInterval = 20;
     _currentTimer = [[NSTimer scheduledTimerWithTimeInterval:timeInterval target:self selector:@selector(hideCaller:)
 						    userInfo:nil repeats:NO] retain];
-*/
 }
 
 - (void)showMessage:(NSString *)message {
@@ -245,10 +253,9 @@ fail:
     if (data == nil)
 	return;
     
-//    [_popupImage setImage:[[[NSImage alloc] initWithData:data] autorelease]];
+    [_popupImage setImage:[[[NSImage alloc] initWithData:data] autorelease]];
 }
 
-/*
 - (void)hideCaller:(id)sender {
     [_popupWindow orderOut:nil];
     [ABPerson cancelLoadingImageDataForTag:imageLoadingTag];
@@ -264,7 +271,6 @@ fail:
     [_currentTimer release];
     [super dealloc];
 }
-*/
 
 - (IBAction)settingsOK:(id)sender {
     // see http://www.red-sweater.com/blog/229/stay-responsive
@@ -278,8 +284,7 @@ fail:
     [NSApp stopModalWithCode:NSCancelButton];
 }
 
-/*
- - (NCIDCaller *)_clickedCaller;
+- (NCIDCaller *)_clickedCaller;
 {
     int clickedRow = [_callHistoryTableView clickedRow];
     if (clickedRow == -1)
@@ -287,7 +292,6 @@ fail:
     
     return [[_callHistoryController arrangedObjects] objectAtIndex:clickedRow];
 }
-
 
 - (IBAction)reverseLookupCaller:(id)sender;
 {
@@ -298,9 +302,7 @@ fail:
 {
     [[NSWorkspace sharedWorkspace] openURL:[[self _clickedCaller] addressBookURL]];
 }
-*/
 
-/*
 - (void)menuNeedsUpdate:(NSMenu *)menu;
 {
     NCIDCaller *clickedCaller = [self _clickedCaller];
@@ -358,28 +360,29 @@ fail:
 
     [self tableView:_callHistoryTableView writeRowsWithIndexes:rowIndexes toPasteboard:[NSPasteboard generalPasteboard]];
 }
-*/
 
 - (void)_editSettings {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *currentHost = [defaults stringForKey:@"NCIDServer"];
 
-//    [NSBundle loadNibNamed:@"Settings" owner:self];
+    [NSBundle loadNibNamed:@"Settings" owner:self];
 
     [_settingsHost setStringValue:currentHost ? currentHost : @"localhost"];
-//    [_settingsUseGrowl setEnabled:[GrowlApplicationBridge isGrowlRunning]];
+ //   [_settingsUseGrowl setEnabled:[GrowlApplicationBridge isGrowlRunning]];
 
     if ([self _runModalForWindow:_settingsWindow] != NSOKButton)
 	return;
     
     [defaults setObject:[_settingsHost stringValue] forKey:@"NCIDServer"];
     [defaults synchronize];
-//    if ([defaults boolForKey:@"UseGrowl"]) {
-//	[GrowlApplicationBridge registerWithDictionary:
-//         [NSDictionary dictionaryWithContentsOfFile:
-//	  [[NSBundle mainBundle] pathForResource:@"Growl Registration Ticket"
-//					  ofType:@"growlRegDict"]]];
-//    }
+/*
+ if ([defaults boolForKey:@"UseGrowl"]) {
+	[GrowlApplicationBridge registerWithDictionary:
+	 [NSDictionary dictionaryWithContentsOfFile:
+	  [[NSBundle mainBundle] pathForResource:@"Growl Registration Ticket"
+					  ofType:@"growlRegDict"]]];
+    }
+*/
 }
 
 - (int)_runModalForWindow:(NSWindow *)window {
@@ -405,7 +408,6 @@ fail:
 	   (GetCurrentKeyModifiers() & cmdKey);
 }
 
-/*
 - (NSRect)windowWillUseStandardFrame:(NSWindow *)window defaultFrame:(NSRect)defaultFrame;
 {
     NSRect frame = [window frame];
@@ -432,6 +434,5 @@ fail:
     
     return frame;
 }
-*/
 
 @end

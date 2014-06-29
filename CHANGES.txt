@@ -1,0 +1,119 @@
+NCIDnotify
+
+Version 0.9.17a
+    Macintosh Only:
+      - Added caller display to notification center (osx 10.8+)
+      - Removed growl functionality
+Version 0.9.17
+    Macintosh Only:
+      - Added drag and drop of phone numbers from history
+      - Added contextual menu on history to choose reverse lookup or
+        address book lookup (where applicable)
+    Windows Only:
+      - Added ability to enable/disable balloon timeout
+      - Added number formatting feature
+      - Added support for multiple simultaneous NCID server connections
+      - Changed NCID message dialog to be displayed "on top" of all other windows
+    Macintosh and Windows:
+      - Added "copy to clipboard" feature for phone numbers
+
+Version 0.9.16
+    Macintosh Only:
+      - Skip leading 0s for Address Book lookup (considered part of
+        area/city code in some countries, but really a prefix)
+      - Use number formatting as specified in Address Book Preferences
+      - Optional incoming call notification with Growl (requires Growl
+        installed)
+      - Fixed saving of reverse lookup URL when you click the "Set" button
+    Windows Only:
+      - Fixed UTF-8 display of names
+      - Fixed server messages from halting program execution
+      - Fixed balloons on pre-Vista systems
+      - Fixed handling of 11 digit numbers
+      - Changed the Call History to be updated immediately without requiring
+        refresh
+      - Fixed multiple instances of same dialog for all dialogs
+      - Added Line capability to call history and balloon
+      - Added user configurable balloon options, with name and number being
+        the default options
+      - Added ability to change timeout of balloon
+      - Added display of server version on the caller history page
+      - Added the ability to change configuration without restarting program
+      - Removed the limit on the number of calls displayed in the history
+        (now unlimited)
+      - Added support for "300 end of call log" message
+      - Changed server reconnect to occur immediately after powerup
+        (as opposed to waiting for first user interaction)
+    Macintosh and Windows:
+      - Numbers are formatted for 11, 10, 7, and 4 digits
+
+Version 0.9.15
+    Macintosh Only:
+      - fixed bug with moving across wireless networks
+      - added Address Book support to show caller name/photo
+      - fixed small leak
+    Windows Only:
+      No Changes
+    Macintosh and Windows:
+      - fixed display of names in the number field
+      - updated the reverse lookup URL list
+
+Version 0.9.14
+    Macintosh:
+      - Fixed up ncidpop for Mac OS X so it compiles with Xcode 3.x and on
+        Intel.  The project files in the current ncidpop release are too
+        old to even be imported by current versions of Xcode, and an API
+        being used was deprecated and not endian-safe.
+      - Added some Windows version features (history and reverse lookup).
+      - Cleaned up the popup display as it was hard to read in a hurry when
+        someone was calling.
+    Windows:
+      No Changes
+
+Version 0.9.13
+    - Minor change to support NetCallerID message format
+    - Build with Microsoft Visual Studio 2005
+    - Reversed order of changes in this file.
+
+Version 0.9.12
+    - Support Windows power management. Will force reconnect to ncidd when
+      resuming from standby or hibernation.
+    - Add patch from Joe Nardone for right-click on system tray for
+      non-standard window managers.
+    - Fixed one of the URLs in ReverseLookupURLs.txt
+
+Version 0.9.11
+    - Support Windows XP Visual Styles
+
+Version 0.9.10
+    - Support new message format from ncidd
+    - Macintosh: Code, broken in Version 0.9.6, updated and compiles again.
+                 Call History features not yet implemented.
+
+Version 0.9.9
+    - Changed NCIDpop to allow the telephone number reverse-lookup
+      URL to be configured in the Preferences dialog (substitution
+      is applied for the actual phone number--see the URLs
+    - Some possible URL's can be found in the file: ReverseLookupURLs.txt
+
+Version 0.9.8
+    - Allow sorting the columns in the call history dialog,
+    - Added a refresh button to the call history dialog.
+
+Version 0.9.7
+    - The tray icon will show if NCIDpop is connected to ncidd.
+    - Kill the timer when it expires (this was causing the balloon
+      help to disappear before it should).
+
+Version 0.9.6
+    - enhanced the Windows version of NCIDpop to include a call
+      history dialog.
+    - If you double-click on a call in the call history window, it
+      will perform a anywho.com search on the phone number. This will
+      do a reverse lookup of the phone number and if the number is
+      found, it will show name, address and a link for a map.
+
+Version 0.9.5
+    - No longer requires patched ncidd; uses TCP to connect to a
+      specified Network Caller ID server.
+    - Added dialog to set caller ID server host.

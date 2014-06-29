@@ -1,0 +1,33 @@
+Alexei Kosut:
+    Designed and wrote most of the programs.
+
+Lyman Epp:
+    Wrote the new features for the Windows version of NCIDpop
+    contained in Versions 0.9.6 through 0.9.13. Finished the
+    Windows installer.
+
+Mark Salyzyn:
+    Updated the Macintosh code, in version 0.9.10, so it would
+    compile with the common files used by the Windows version.
+
+Joe Nardone:
+    Submitted patch for non-standard window managers.
+
+Rich West:
+    Created the Windows installer.
+
+Nicolas Riley:
+    Fixed up ncidpop for Mac OS X so it compiles with Xcode 3.x and on
+    Intel.  (The project files in the current ncidpop release are too old
+    to even be imported by current versions of Xcode, and an API being used
+    was deprecated and not endian-safe.  Added some of the other Windows
+    features (history and reverse lookup).  Also cleaned up the popup display
+    as it was hard to read in a hurry when someone was calling.
+
+Chris Lenderman
+    Fixed problems and added features in the Windows version of NCIDpop 0.9.16 and 0.9.17.0
+
+David Watson v0.9.17a
+    Forked 0.9.17 and directed caller display to osx notification center. Removed
+    growl functionality. Ignored windows functionality—-very likely broke it.
+

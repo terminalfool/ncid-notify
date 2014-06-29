@@ -12,9 +12,9 @@
 
 #include "ncid_network.h"
 
-#ifdef WIN32
-#include <winsock.h>
-#else
+//#ifdef WIN32
+//#include <winsock.h>
+//#else
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -23,7 +23,7 @@
 #include <netdb.h>
 #include <arpa/inet.h>
 #include <pthread.h>
-#endif
+//#endif
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -34,7 +34,8 @@
 #define MSG_WAITALL 0
 #endif
 
-#ifdef WIN32
+/*
+ #ifdef WIN32
 typedef HANDLE pthread_mutex_t;
 #define PTHREAD_MUTEX_INITIALIZER NULL
 #define pthread_mutex_init(mutex, attr) *mutex = CreateMutex(NULL, FALSE, NULL)
@@ -62,6 +63,7 @@ static void myprintf(FILE *f, const char *fmt, ...) {
 
 #define perror(str) myprintf(stderr, "%s: %s (%d)\n", (str), strerror(WSAGetLastError()), WSAGetLastError())
 #endif
+*/
 
 static const short ncid_port = 3333;
 static const int ncid_delay = 10;
