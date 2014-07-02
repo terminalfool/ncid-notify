@@ -1,28 +1,30 @@
 Mac OS X
 
-Copy the NCIDpop application to your hard drive. Double-click to launch
+This application uses the OSX Notification Center (10.8+).
+
+Copy the NCIDnotify application to your hard drive. Double-click to launch
 it. There will be no visual indication, but you can verify that it is
-running by looking for "NCIDpop" in Activity Monitor. NCIDpop will
+running by looking for "NCIDnotify" in Activity Monitor. NCIDnotify will
 automatically quit when you log out or shut down your Mac.
 
-To launch NCIDpop automatically when you log in to Mac OS X, add it to
+To launch NCIDnotify automatically when you log in to Mac OS X, add it to
 the Accounts > Login Items panel in System Preferences.
 
 To change the NCID server, hold down the Command key while opening the
-NCIDpop application.
+NCIDnotify application.
 
-To view your call history, open NCIDpop again (after it is running). 
+To view your call history, open NCIDnotify again (after it is running). 
 Or, more simply, open your notifications panel.
 
 
 Running a NCID Server
 
-Before you can use NCIDpop, you will need to be running a Network
-Caller ID server. NCIDpop is designed for use with ncidd. When NCIDpop
+Before you can use NCIDnotify, you will need to be running a Network
+Caller ID server. NCIDnotify is designed for use with ncidd. When NCIDnotify
 first starts, you will need to enter the hostname or IP address of the
 server running ncidd. If the server is running on the local computer
 (currently possible only with Mac OS X), enter "localhost". If you
-make a mistake, see the directions above to change the NCIDpop server
+make a mistake, see the directions above to change the NCIDnotify server
 setting for your operating system.
 
 If you are running ncidd on a non-default port (i.e., not 3333),
