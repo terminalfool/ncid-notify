@@ -1,5 +1,7 @@
 ###ncid-notify
-This is a stripped down copy of NCIDpop using OSX notifications (10.8+). It listens to an NCID server and attempts to display callers as they appear in the contacts list.
+This is a modified copy of NCIDpop using OSX notifications (10.8+). It listens to an NCID server and attempts to display callers as they appear in the contacts list.
+
+release: https://github.com/terminalfool/ncid-notify/releases/tag/0.9.17a
 
 ***
 
