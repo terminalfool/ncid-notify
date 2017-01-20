@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>NCIDnotify</string>
 	<key>CFBundleGetInfoString</key>
-	<string>NCIDnotify 0.9.17a</string>
+	<string>NCIDnotify 0.9.17s</string>
 	<key>CFBundleIconFile</key>
 	<string>NCIDnotify</string>
 	<key>CFBundleIdentifier</key>

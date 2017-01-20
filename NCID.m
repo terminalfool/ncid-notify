@@ -210,7 +210,7 @@ fail:
     NSUserNotification *notification = [[NSUserNotification alloc] init];
     notification.title = [caller name];
     notification.subtitle = [caller number];
-    [notification set_identityImage:[NSImage imageNamed:@"[[caller person] imageData]"]];
+//    [notification set_identityImage:[NSImage imageNamed:@"[[caller person] imageData]"]];
     [NSUserNotificationCenter.defaultUserNotificationCenter deliverNotification:notification];
 
 /*
@@ -248,7 +248,7 @@ fail:
                                                           nil, nil)];
 }
 
-- (void)consumeImageData:(NSData *)data forTag:(int)tag;
+- (void)consumeImageData:(NSData *)data forTag:(long)tag;
 {
     if (data == nil)
 	return;
@@ -365,7 +365,7 @@ fail:
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *currentHost = [defaults stringForKey:@"NCIDServer"];
 
-    [NSBundle loadNibNamed:@"Settings" owner:self];
+//    [NSBundle loadNibNamed:@"Settings" owner:self];
 
     [_settingsHost setStringValue:currentHost ? currentHost : @"localhost"];
  //   [_settingsUseGrowl setEnabled:[GrowlApplicationBridge isGrowlRunning]];
