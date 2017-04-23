@@ -210,9 +210,10 @@ fail:
     NSUserNotification *notification = [[NSUserNotification alloc] init];
     notification.title = [caller name];
     notification.subtitle = [caller number];
-//    [notification set_identityImage:[NSImage imageNamed:@"[[caller person] imageData]"]];
+    notification.contentImage = [NSImage imageNamed:@"[[caller person] imageData]"];
+    imageLoadingTag = [[caller person] beginLoadingImageDataForClient:self];
     [NSUserNotificationCenter.defaultUserNotificationCenter deliverNotification:notification];
-
+   
 /*
  if ([[NSUserDefaults standardUserDefaults] boolForKey:@"UseGrowl"] && [GrowlApplicationBridge isGrowlRunning]) {
 	[GrowlApplicationBridge setGrowlDelegate:@""];
@@ -365,7 +366,7 @@ fail:
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *currentHost = [defaults stringForKey:@"NCIDServer"];
 
-//    [NSBundle loadNibNamed:@"Settings" owner:self];
+    [[NSBundle mainBundle ]loadNibNamed:@"Settings" owner:self topLevelObjects:nil];
 
     [_settingsHost setStringValue:currentHost ? currentHost : @"localhost"];
  //   [_settingsUseGrowl setEnabled:[GrowlApplicationBridge isGrowlRunning]];

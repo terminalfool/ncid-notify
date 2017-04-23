@@ -1,9 +1,5 @@
 NCIDnotify
 
-Version 0.9.17s
-    Macintosh Only:
-      - Recompile under Sierra, removing deprecated calls
-
 Version 0.9.17a
     Macintosh Only:
       - Added caller display to notification center (osx 10.8+)

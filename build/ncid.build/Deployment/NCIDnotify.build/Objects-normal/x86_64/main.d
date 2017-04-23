@@ -1,1 +1,1 @@
-dependencies: /Users/admin/git/ncid-notify/main.m
+dependencies: /Users/admin/git/ncid-notify-0.9.17/main.m

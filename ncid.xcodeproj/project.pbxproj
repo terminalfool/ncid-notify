@@ -22,19 +22,6 @@
 		E1EF7D1B0E3EB77A00EF00CE /* NCIDCaller.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EF7D190E3EB77A00EF00CE /* NCIDCaller.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		E1B1D4CF10F0392000EFAE3A /* Copy Growl.framework */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Copy Growl.framework";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
@@ -170,7 +157,6 @@
 				E1C5DBC90E252CA800057276 /* Sources */,
 				E1C5DBC40E252CA800057276 /* Resources */,
 				E1C5DBCD0E252CA800057276 /* Frameworks */,
-				E1B1D4CF10F0392000EFAE3A /* Copy Growl.framework */,
 			);
 			buildRules = (
 			);
@@ -300,7 +286,7 @@
 				GCC_PREFIX_HEADER = NCID_Prefix.h;
 				GCC_VERSION = "";
 				INFOPLIST_FILE = Info.plist;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = NCIDnotify;
 				SDKROOT = macosx;
@@ -317,7 +303,7 @@
 				GCC_PREFIX_HEADER = NCID_Prefix.h;
 				GCC_VERSION = "";
 				INFOPLIST_FILE = Info.plist;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = NCIDnotify;
 				SDKROOT = macosx;

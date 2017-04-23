@@ -1,3 +1,3 @@
-dependencies: /Users/admin/git/ncid-notify/NCIDCaller.m \
-  /Users/admin/git/ncid-notify/NCIDCaller.h \
-  /Users/admin/git/ncid-notify/ncid_network.h
+dependencies: /Users/admin/git/ncid-notify-0.9.17/NCIDCaller.m \
+  /Users/admin/git/ncid-notify-0.9.17/NCIDCaller.h \
+  /Users/admin/git/ncid-notify-0.9.17/ncid_network.h

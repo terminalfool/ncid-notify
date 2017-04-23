@@ -1,1 +1,1 @@
-/Users/admin/git/ncid-notify/NCIDnotify 0.9.17s/NCIDnotify.app
+/Users/admin/git/ncid-notify-0.9.17/NCIDnotify 0.9.17a/NCIDnotify.app

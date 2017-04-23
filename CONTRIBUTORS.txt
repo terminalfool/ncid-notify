@@ -29,5 +29,5 @@ Chris Lenderman
 
 David Watson v0.9.17a
     Forked 0.9.17 and directed caller display to osx notification center. Removed
-    growl functionality. Ignored windows functionality—-very likely broke it.
+    growl functionality.
 
