@@ -28,6 +28,6 @@ Chris Lenderman
     Fixed problems and added features in the Windows version of NCIDpop 0.9.16 and 0.9.17.0
 
 David Watson v0.9.17a
-    Forked 0.9.17 and directed caller display to osx notification center. Removed
-    growl functionality.
+    Forked 0.9.17 for Mac osx and directed caller display to osx notification center. Removed
+    growl functionality, resolved methods deprecated under os 10.8.
 
