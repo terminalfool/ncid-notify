@@ -23,6 +23,7 @@ MOUNT=`hdiutil attach $DMG`
 DISK=`echo $MOUNT | sed -ne ' s|^/dev/\([^ ]*\).*$|\1|p'`
 MOUNTPOINT=`echo $MOUNT | sed -ne 's|^.*\(/Volumes/.*\)$|\1|p'`
 ditto -rsrc "$DSTROOT" "$MOUNTPOINT"
+cp "Install.txt" "$MOUNTPOINT"
 chmod -R a+rX,u+w "$MOUNTPOINT"
 hdiutil detach $DISK
 hdiutil resize -sectors min $DMG
